@@ -1,0 +1,12 @@
+// 1. Utilidades 
+@use "./utilities/variables" as *;
+@use "./utilities/mixins" as *;
+
+// 2. Base
+@use "./base/reset";
+
+// 3. Layout y Páginas
+@use "./layout/header";
+@use "./layout/footer";
+@use "./pages/home";
+@use "./pages/contacto";

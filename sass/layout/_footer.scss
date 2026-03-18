@@ -1,0 +1,34 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+//footer iconos
+footer.fondofooter {
+    background-color: $color-oscuro;
+    padding: 3rem 0;
+    text-align: center;
+    width: 100%;
+
+    .redes-sociales {
+        @include flex-center;
+        gap: 20px;
+        margin-bottom: 1.5rem;
+
+        
+        a img {
+            width: 35px;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+                    
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    p {
+        color: $color-secundario;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+}

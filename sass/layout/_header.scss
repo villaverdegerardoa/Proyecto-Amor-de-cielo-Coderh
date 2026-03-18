@@ -1,0 +1,28 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.colorfondonav {
+    background-color: $color-principal;
+    padding: 0.5rem 1rem;
+
+    .navbar-brand h1 {
+        font-size: 1.5rem;
+        color: $color-oscuro;
+    }
+
+    .navlink {
+        color: $color-oscuro;
+        &:hover {
+            color: $color-principal-hover;
+        }
+    }
+
+    .carrito-icono {
+        width: 30px; 
+        height: auto;
+        
+        @include dispositivos(mobile) {
+            width: 25px;
+        }
+    }
+}

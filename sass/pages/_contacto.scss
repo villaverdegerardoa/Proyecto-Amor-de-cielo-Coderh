@@ -1,0 +1,45 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.seccion-contacto {
+    padding: 50px 0;
+    text-align: center;
+    background-color: $color-secundario;
+
+    h3 {
+        color: $color-oscuro;
+        margin-bottom: 2rem;
+    }
+
+    .formulario-bebe {
+        max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: left;
+
+        label {
+            color: $color-oscuro;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border: 1px solid $color-principal;
+            border-radius: 15px;
+            outline: none;
+
+            &:focus {
+                border-color: $color-principal-hover;
+            }
+        }
+
+        button {
+            @include boton-estilo($color-principal, $color-principal-hover);
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+}

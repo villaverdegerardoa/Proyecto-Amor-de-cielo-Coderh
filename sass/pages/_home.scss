@@ -1,0 +1,7 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.botton {       
+    // cambio de color al pasar el mouse:
+    @include boton-estilo($color-principal, $color-principal-hover);
+}
