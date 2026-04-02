@@ -6,7 +6,7 @@
     text-align: center;
     background-color: $color-secundario;
 
-    h3 {
+    h1 { 
         color: $color-oscuro;
         margin-bottom: 2rem;
     }
@@ -29,16 +29,17 @@
             border: 1px solid $color-principal;
             border-radius: 15px;
             outline: none;
+            font-family: $fuente-principal;
 
             &:focus {
                 border-color: $color-principal-hover;
+                box-shadow: 0 0 5px $color-principal;
             }
         }
 
         button {
             @include boton-estilo($color-principal, $color-principal-hover);
-            border: none;
-            cursor: pointer;
+            margin-top: 10px;
             font-weight: bold;
         }
     }

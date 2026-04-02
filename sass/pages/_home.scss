@@ -1,7 +1,44 @@
 @use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
 
+// botón principal
 .botton {       
-    // cambio de color al pasar el mouse:
     @include boton-estilo($color-principal, $color-principal-hover);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+main {
+    padding: 40px 0;
+
+    h1 {
+        color: $color-oscuro;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        
+        @include dispositivos(mobile) {
+            font-size: 1.8rem; 
+        }
+    }
+
+    .lead {
+        color: lighten($color-oscuro, 20%);
+        margin-bottom: 2rem;
+    }
+
+    // Tarjetas de "Envíos" y "Medios de Pago"
+    .rounded-3 {
+        background-color: $color-secundario;
+        border: 1px solid lighten($color-principal, 5%);
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            color: $color-oscuro;
+            margin-bottom: 1rem;
+        }
+    }
 }

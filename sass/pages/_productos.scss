@@ -1,0 +1,88 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+
+    h1 {
+        color: $color-oscuro;
+        font-weight: bold;
+        display: inline-block;
+        padding-bottom: 12px;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background-color: $color-principal-hover;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+    }
+
+    p {
+        color: scale-color($color-oscuro, $lightness: 25%); // Corrección moderna
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+}
+
+// NUEVO: Estilo para unificar los 6 productos
+article {
+    .card-producto { // Usaremos esta clase en el HTML
+        background-color: $color-secundario; // Fondo blanco de la tarjeta
+        border: 1px solid lighten($color-principal, 5%); // Borde rosa muy suave
+        border-radius: 20px; // Bordes bien redondeados, estilo "bebé"
+        padding: 15px; // Espacio interno
+        transition: all 0.3s ease;
+        height: 100%; // Para que todas midan lo mismo de alto
+        text-align: center;
+
+        @include flex-center; // Centramos todo el contenido
+        flex-direction: column;
+
+        // Efecto al pasar el mouse
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); // Sombra muy sutil
+            border-color: $color-principal;
+        }
+
+        // LA CLAVE: El contenedor de la imagen
+        .contenedor-imagen {
+            width: 100%;
+            padding-top: 100%; // Esto crea un cuadrado perfecto (ratio 1:1)
+            position: relative;
+            overflow: hidden; // Recorta lo que sobra
+            border-radius: 15px; // Redondeado interno de la foto
+            margin-bottom: 15px;
+
+            // La imagen real adentro
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: contain; // Importante: Muestra la foto entera sin cortarla, pero la centra.
+                // Si prefieres que llene todo el cuadrado (cortando un poco los bordes), usa 'cover'.
+                padding: 10px; // Espacio para que la ropa respire
+                background-color: #fcfcfc; // Un fondo casi blanco muy sutil para las fotos con fondo feo
+            }
+        }
+
+        h3 {
+            color: $color-oscuro;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: auto; // Empuja el título hacia abajo
+            margin-bottom: 0;
+        }
+    }
+}

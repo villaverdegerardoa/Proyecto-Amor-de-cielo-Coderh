@@ -1,17 +1,21 @@
+@use "../utilities/variables" as *; 
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@mixin boton-estilo($bg, $bg-hover: $bg) {
+@mixin boton-estilo($bg, $bg-hover) {
     background-color: $bg;
-    color: #333;
+    color: $color-oscuro; 
     padding: 10px 25px;
     border-radius: 30px;
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
     
     &:hover {
         background-color: $bg-hover;
